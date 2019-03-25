@@ -179,3 +179,19 @@ cleanWSpace <- function(input){
   return(input)
 }
 
+
+#' ppm integer scaling
+#' Find scale factor required to turn mass delta to integer
+#'
+#' @param mass vector of masses
+#' @param ppm vector of ppm
+#'
+#' @return vector of scale factors
+#' @export
+#'
+scale_ppm <- function(mass,
+                     ppm){
+  1L / ((ppm / 1000000L) * mass)
+}
+
+

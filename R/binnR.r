@@ -15,13 +15,8 @@ peakBinner <- function(peakList,
                        massEnd = 15000){
 
   peakList <- IDBacApp::mQuantToMassVec(peakList)
-    scalePpm <- function(mass,
-                         ppm = ppm
-    ){
-      1 / ((ppm / 10e5) * mass)
-    }
     
-    scaler <- scalePpm(ppm = ppm, 
+    scaler <- scale_ppm(ppm = ppm, 
                        mass = massStart)
     
     toSub <- round(massStart * scaler)
